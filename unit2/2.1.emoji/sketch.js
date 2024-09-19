@@ -15,6 +15,6 @@ function draw() {
   
   stroke(100);
   fill(255);
-  circle(200, 200, 300);
+  circle(200, 220, 300);
 
 }
