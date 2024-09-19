@@ -10,7 +10,7 @@ function draw() {
   background(173, 232, 244);
 
   rectMode(CENTER);
-  
-  rect(220, 220, 100, 50); 
+  fill(255,0,0); 
+  rect(220,220,100,50); 
  
 }
