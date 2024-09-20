@@ -11,7 +11,7 @@ function draw() {
 
   noStroke();
   fill(255);
-  circle(200, 220, 295);
+  circle(200, 220, 290);
 
   noStroke();
   fill(255); 
