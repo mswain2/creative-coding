@@ -27,13 +27,13 @@ function draw() {
   fill(100);
   push();
   translate(140, 190);
-  rotate(-10);
-  ellipse(0, 0, 85, 125);
+  rotate(10);
+  ellipse(0, 0, 85, 115);
   pop();
   push();
   translate(260, 190);
-  rotate(10);
-  ellipse(0, 0, 85, 125);
+  rotate(-10);
+  ellipse(0, 0, 85, 115);
   pop();
 
 }
