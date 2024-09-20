@@ -25,8 +25,15 @@ function draw() {
 
   noStroke();
   fill(100);
-  rotate(45);
-  ellipse(140, 175, 85, 100);
-  ellipse(260, 175, 85, 100);
+  push();
+  translate(140, 175);
+  rotate(15);
+  ellipse(0, 0, 85, 100);
+  pop();
+  push();
+  translate(260, 175);
+  rotate(15);
+  ellipse(0, 0, 85, 100);
+  pop();
 
 }
