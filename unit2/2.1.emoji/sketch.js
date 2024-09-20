@@ -50,8 +50,8 @@ function draw() {
   noFill();
   stroke(10);
   strokeWeight(5);
-  arc(175, 300, 50, 50, PI, TWO_PI);
-  arc(225, 300, 50, 50, PI, TWO_PI);
+  arc(175, 300, 50, 50, TWO_PI, PI);
+  arc(225, 300, 50, 50, TWO_PI, PI);
 
 
 
