@@ -10,7 +10,7 @@ function draw() {
   background(173, 232, 244);
 
   stroke(100);
-  strokeWeight(50);
+  strokeWeight(25);
   fill(150);
   circle(100, 120, 100);
   circle(300, 120, 100); 
