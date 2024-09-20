@@ -1,3 +1,7 @@
+//This is the link to the emoji I was trying to recreate. https://emojipedia.org/panda
+//I added some details that aren't on that emoji to make it look nicer. I think it turned out 
+//really well and I really like it!
+
 function setup() {
   // create a canvas
   createCanvas(400, 400);
@@ -81,7 +85,6 @@ function draw() {
   //Creating two arcs (half-circles) to represent the mouth.
   arc(170, 300, 60, 50, TWO_PI, PI);
   arc(230, 300, 60, 50, TWO_PI, PI);
-
 
 
 }
