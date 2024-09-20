@@ -47,8 +47,11 @@ function draw() {
   fill(10);
   triangle(200, 280, 175, 250, 225, 250);
 
-  arc(175, 300, 50, 50, 0, 180);
-  arc(225, 300, 50, 50, 0, 180);
+  noFill();
+  stroke(10);
+  strokeWeight(5);
+  arc(175, 300, 50, 50, PI, TWO_PI);
+  arc(225, 300, 50, 50, PI, TWO_PI);
 
 
 
