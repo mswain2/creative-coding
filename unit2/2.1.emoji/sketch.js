@@ -23,9 +23,10 @@ function draw() {
   fill(255); 
   rect(50, 175, 300, 200, 60); 
 
+  rotate(20);
   noStroke();
   fill(100);
-  ellipse(150, 175, 75, 100);
-  ellipse(250, 175, 75, 100);
+  ellipse(140, 175, 85, 100);
+  ellipse(260, 175, 85, 100);
 
 }
