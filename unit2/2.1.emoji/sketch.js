@@ -38,6 +38,6 @@ function draw() {
 
   noStroke();
   fill(0);
-  ellipse(140, 190, 50, 100);
-  ellipse(260, 190, 50, 100);
+  ellipse(140, 190, 25, 60);
+  ellipse(260, 190, 25, 60);
 }
