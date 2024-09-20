@@ -10,7 +10,7 @@ function draw() {
   background(173, 232, 244);
 
   stroke(100);
-  strokeWeight(10);
+  strokeWeight(50);
   fill(150);
   circle(100, 120, 100);
   circle(300, 120, 100); 
@@ -41,6 +41,8 @@ function draw() {
   ellipse(140, 190, 25, 50);
   ellipse(260, 190, 25, 50);
   fill(255);
-  circle(135, 180, 10);
-  circle(255, 180, 10);
+  circle(137, 180, 10);
+  circle(257, 180, 10);
+
+  f
 }
