@@ -9,11 +9,11 @@ function setup() {
 function draw() {
   background(173, 232, 244);
 
-  stroke(100);
+  noStroke();
   fill(255);
   circle(200, 220, 295);
 
-  stroke(100);
+  noStroke();
   fill(255); 
   rect(50, 175, 300, 200, 60); 
   
