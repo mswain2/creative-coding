@@ -44,5 +44,6 @@ function draw() {
   circle(137, 180, 10);
   circle(257, 180, 10);
 
-  f
+  fill(10);
+  triangle(200, 250, 175, 230, 225, 230);
 }
