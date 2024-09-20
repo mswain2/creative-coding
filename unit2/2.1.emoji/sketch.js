@@ -37,7 +37,10 @@ function draw() {
   pop();
 
   noStroke();
-  fill(0);
-  ellipse(140, 190, 25, 60);
-  ellipse(260, 190, 25, 60);
+  fill(10);
+  ellipse(140, 190, 25, 50);
+  ellipse(260, 190, 25, 50);
+  fill(255);
+  circle(135, 180, 10);
+  circle(255, 180, 10);
 }
