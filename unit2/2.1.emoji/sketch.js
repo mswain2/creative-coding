@@ -27,7 +27,7 @@ function draw() {
   fill(100);
   push();
   translate(140, 175);
-  rotate(15);
+  rotate(-15);
   ellipse(0, 0, 85, 100);
   pop();
   push();
