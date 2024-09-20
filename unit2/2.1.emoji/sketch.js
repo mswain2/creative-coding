@@ -11,10 +11,14 @@ function draw() {
 
   noStroke();
   fill(255);
-  circle(200, 220, 280);
+  circle(200, 220, 290);
 
   noStroke();
   fill(255); 
   rect(50, 175, 300, 200, 60); 
-  
+ 
+  stroke(100);
+  fill(175);
+  circle(100, 100, 100);
+  circle(300, 300, 100); 
 }
