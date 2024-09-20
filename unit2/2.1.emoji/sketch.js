@@ -18,7 +18,8 @@ function draw() {
   rect(50, 175, 300, 200, 60); 
  
   stroke(100);
-  fill(175);
+  strokeWeight(10);
+  fill(150);
   circle(100, 100, 100);
-  circle(300, 300, 100); 
+  circle(300, 100, 100); 
 }
