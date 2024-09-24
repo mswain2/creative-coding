@@ -25,6 +25,9 @@ function draw() {
   circle(250, 175, 75);
 
   fill(0);
-  circle(150, 175, 50);
-  circle(250, 175, 50);
+  circle(150, 175, 30);
+  circle(250, 175, 30);
+
+  fill(150);
+  ellipse(200, 275, 250, 25);
 }
