@@ -40,5 +40,12 @@ function draw() {
   ellipse(244, 253, 20, 25);
   ellipse(264, 243, 20, 25);
 
-  rect(287, 245, 25, 35, 50, 50, 20, 20);  
+  push();
+  translate(280, 245);
+  rotate(10);
+  rect(0, 0, 25, 35, 50, 50, 20, 20);  
+  pop(); 
+ 
+  fill("yellow");
+  circle(285, 250, 10);
 }
