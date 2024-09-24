@@ -13,7 +13,7 @@ function draw() {
   stroke(100);
   strokeWeight(6);
   fill(240);
-  rect(150, 200, 100, 250, 60, 60, 10, 10);
+  rect(100, 75, 200, 250, 60, 60, 10, 10);
 
   
 }
