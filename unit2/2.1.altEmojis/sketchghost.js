@@ -13,9 +13,9 @@ function draw() {
   noStroke();
   fill(240);
   rect(100, 75, 200, 250, 80, 80, 10, 10);
-  circle(120, 322, 40);
-  circle(200, 322, 40);
-  circle(280, 322, 40);
+  circle(120, 321, 40);
+  circle(200, 321, 40);
+  circle(280, 321, 40);
   fill(150);
   circle(240, 322, 40);
   circle(160, 322, 40);
