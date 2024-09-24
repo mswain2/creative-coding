@@ -29,7 +29,7 @@ function draw() {
   circle(250, 175, 30);
 
   fill(150);
-  rect(114, 240, 175, 15);
+  rect(114, 242, 175, 15);
 
   ellipse(124, 243, 20, 25);
   ellipse(144, 253, 20, 25);
@@ -38,5 +38,7 @@ function draw() {
   ellipse(204, 243, 20, 25);
   ellipse(224, 253, 20, 25);
   ellipse(244, 243, 20, 25);
+  ellipse(264, 253, 20, 25);
+  ellipse(284, 243, 20, 25);
   
 }
