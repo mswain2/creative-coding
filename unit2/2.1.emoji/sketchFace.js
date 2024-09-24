@@ -58,5 +58,5 @@ function draw() {
  
   //Create a small yellow circle to place over the zipper pull thing to make it look like a hole.
   fill("yellow");
-  circle(295, 250, 10);
+  circle(300, 250, 10);
 }
