@@ -30,7 +30,7 @@ function draw() {
   circle(250, 150, 50);
   stroke(0);
   strokeWeight(6);
-  line(125, 125, 150, 150);
-  line(175, 175, 150, 150);
+  line(130, 130, 150, 150);
+  line(130, 170, 150, 150);
  
 }
