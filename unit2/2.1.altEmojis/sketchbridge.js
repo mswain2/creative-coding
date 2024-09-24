@@ -43,7 +43,11 @@ function draw() {
   fill("blue");
   rect(50 ,320, 300, 30);
   ellipse(80, 320, 60, 50);
-  ellipse(110, 320, 60, 50);
-  ellipse(140, 320, 60, 50);
+  ellipse(120, 315, 60, 50);
+  ellipse(160, 320, 60, 50);
+  ellipse(200, 315, 60, 50);
+  ellipse(240, 320, 60, 50);
+  ellipse(280, 315, 60, 50);
+  ellipse(320, 320, 60, 50);
 
 }
