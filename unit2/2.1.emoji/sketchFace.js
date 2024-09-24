@@ -21,7 +21,7 @@ function draw() {
   // draw an ellipse with 250 pixel diameter
   // with its center at x position 200
   // and at y position 200
-  ellipse(200,200,250,250) 
+  ellipse(200,200,250,250); 
 
   noStroke();
   fill(255);
