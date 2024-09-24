@@ -24,8 +24,8 @@ function draw() {
   //Create two lines to represent the arms.
   stroke(240);
   strokeWeight(50);
-  line(110, 225, 70, 180);
-  line(290, 225, 330, 180);
+  line(110, 225, 80, 180);
+  line(290, 225, 320, 180);
 
   //Create some circles that are the same color as the background to make folds in the bottom of the ghost.
   noStroke();
