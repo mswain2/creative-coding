@@ -21,8 +21,9 @@ function draw() {
   circle(120, 320, 40);
   circle(200, 320, 40);
   circle(280, 320, 40);
+  //Create two lines to represent the arms.
   stroke(240);
-  strokeWeight(10);
+  strokeWeight(100);
   line(110, 200, 90, 180);
   line(290, 200, 310, 180);
 

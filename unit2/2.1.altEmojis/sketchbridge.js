@@ -14,4 +14,8 @@ function draw() {
   //Changing the background color to white
   background(255);
 
+  noStroke();
+  fill(
+  square(100, 100, 200);
+
 }
