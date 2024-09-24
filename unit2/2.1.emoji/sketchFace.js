@@ -41,8 +41,9 @@ function draw() {
   ellipse(264, 243, 20, 25);
 
   push();
+  angleMode(DEGREES);
   translate(283, 245);
-  rotate(135);
+  rotate(45);
   rect(0, 0, 25, 35, 50, 50, 20, 20);  
   pop(); 
  
