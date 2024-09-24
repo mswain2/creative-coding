@@ -43,7 +43,7 @@ function draw() {
   push();
   angleMode(DEGREES);
   translate(283, 245);
-  rotate(45);
+  rotate(-45);
   rect(0, 0, 25, 35, 50, 50, 20, 20);  
   pop(); 
  
