@@ -14,4 +14,7 @@ function draw() {
   fill("RebeccaPurple");
   square(50, 50, 300, 20);
 
+  fill("red");
+  rect(50, 200, 300, 20);
+
 }
