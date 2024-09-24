@@ -10,10 +10,11 @@ function draw() {
   //Changing the background color to a light grey
   background(150);
 
-  stroke(100);
-  strokeWeight(6);
+  noStroke();
   fill(240);
   rect(100, 75, 200, 250, 60, 60, 10, 10);
-
+  circle(125, 325, 50);
+  circle(175, 325, 50);
+  circle(225, 325, 50);
   
 }
