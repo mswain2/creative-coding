@@ -1,7 +1,3 @@
-//This is the link to the emoji I was trying to recreate. https://emojipedia.org/panda
-//I added some details that aren't on that emoji to make it look nicer. I think it turned out 
-//really well and I really like it!
-
 function setup() {
   // create a canvas
   createCanvas(400, 400);
@@ -27,4 +23,8 @@ function draw() {
   fill(255);
   circle(150, 175, 75);
   circle(250, 175, 75);
+
+  fill(0);
+  circle(150, 175, 50);
+  circle(250, 175, 50);
 }
