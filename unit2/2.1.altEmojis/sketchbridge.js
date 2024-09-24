@@ -15,7 +15,7 @@ function draw() {
   background(255);
 
   noStroke();
-  fill(
+  fill("RebeccaPurple");
   square(100, 100, 200);
 
 }
