@@ -21,7 +21,13 @@ function draw() {
   circle(120, 320, 40);
   circle(200, 320, 40);
   circle(280, 320, 40);
+  stroke(240);
+  strokeWeight(10);
+  line(110, 200, 90, 180);
+  line(290, 200, 310, 180);
+
   //Create some circles that are the same color as the background to make folds in the bottom of the ghost.
+  noStroke();
   fill(150);
   circle(240, 324, 40);
   circle(160, 324, 40);
