@@ -40,12 +40,7 @@ function draw() {
   rect(315, 125, 15, 85, 20);
   rect(345, 150, 15, 60, 20);
 
-  fill("white");
-  rect(40, 150, 10, 60);
-  rect(350, 150, 10, 60);
-  
-  fill("red");
-  rect(135, 125, 15, 85, 20);
+    rect(135, 125, 15, 85, 20);
   rect(165, 150, 15, 60, 20);
   rect(220, 150, 15, 60, 20);
   rect(250, 125, 15, 85, 20);
@@ -60,5 +55,20 @@ function draw() {
   ellipse(280, 315, 60, 50);
   ellipse(320, 320, 60, 50);
 
-
+  noFill();
+  stroke("red");
+  strokeWeight(20);
+  arc(200, 75, 180, 157, 0, 135);
+  arc(20, 75, 180, 157, 0, 90);
+  arc(380, 75, 180, 157, 90, 135);
+  
+  noStroke();
+  fill("white");
+  rect(0, 100, 50, 200);
+  rect(350, 100, 10, 200);
+  
+  fill("yellow");
+  circle(200, 100, 50);
+  fill("RebeccaPurple");
+  circle(188, 88, 50);
 }
