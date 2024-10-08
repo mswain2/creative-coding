@@ -6,6 +6,15 @@
 //result is a very close emulation, but there is randomness so it looks different with every refresh. I think it 
 //looks really good and is a pretty good emulation of the original piece.
 
+//For my iteration, I wanted to reduce the number of if-else statements in the code and find a more efficient
+//way to determine the probability. I used the map function to replace the if-else statements and got a very
+//similar result. I also wanted to include interactivity because my favorite part of randomizing a piece is
+//refreshing the page over and over to see the different iterations. I added interactivity so that the grid is
+//redrawn every time the mouse is clicked. I also added more randomization to the distribution of the colors 
+//across the piece so that would also change every time the mouse was clicked. While this iteration is not as
+//close to the original work as the first one was, I do like how the randomization is working and generating a 
+//more interesting and variable piece.
+
 function setup() {
   // create the canvas
   createCanvas(900, 640);
@@ -21,9 +30,14 @@ function draw() {
  
   //Change the rectMode to centered so it's easier to put a square within another square.
   rectMode(CENTER);
-
+  push();
   //An initial translate to create a border
   translate(20,20);
+
+  //Randomly generate a start and end value to randomize the distribution of green sqaures across the piece.
+  //This changes how the gradient of colors looks across the grid.
+  let start = random(0,0.2);
+  let end = random(0.8, 1);  
 
   //Change to no fill and make the stroke weight larger
   noFill();
@@ -33,14 +47,16 @@ function draw() {
   for(let x = 0; x < 44; x++){
      for(let y = 0; y < 31; y++){
         //Get the probability of the outside square being green given the column number.
-        let prob = getProb(x, 1);
+        //let prob = getProb(x, 1);
+        let prob = getProb(x, start, end);
         //Set the color using the probability given above
         getColor(prob); 
         //Draw a 16x16 square
         square(x * 20, y * 20, 16, 1);
 
         //Get the probability of the inside square being green given the column number.
-        let prob2 = getProb(x, 0);
+        //let prob2 = getProb(x, 0);
+        let prob2 = getProb(x, start, end);
         //Set the color using the probability found above
         getColor(prob2);
         //Draw an 8x8 square
@@ -48,129 +64,14 @@ function draw() {
     }
   
   }
-
+  pop();
 }
 
 
-
-//This returns the probability of the stroke color being the green color.
-function getProb(x, o){
-    //If we are talking about the inside square
-    //I counted the number of smaller squares in a given column to determine the fractional probability of having
-    //a green inside square for that row. (numberOfGreenSquares/total)
-    if(o == 0){
-        if (x == 0){
-            return 0;
-        }else if (x == 1){
-            return 0.06;
-        }else if (x == 2 || x == 4){
-            return 0.03;
-        }else if (x == 3 || x == 5){
-            return 0.129;
-        }else if (x == 6 || x == 7 || x == 8){
-            return 0.19;
-        }else if (x == 9){
-            return 0.16;
-        }else if (x == 10 || x == 15){
-            return 0.29;
-        }else if (x == 11 || x == 12){
-            return 0.22;
-        }else if (x == 13 || x == 19 || x == 20){
-            return 0.45;
-        }else if (x == 14){
-            return 0.32;
-        }else if (x == 16 || x == 22){
-            return 0.387;
-        }else if (x == 17 || x == 18){
-            return 0.419;
-        }else if (x == 21){
-            return 0.61;
-        }else if (x == 23 || x == 25 || x == 27){
-            return 0.548;
-        }else if (x == 24){
-            return 0.58;
-        }else if (x == 26){
-            return 0.645;
-        }else if (x == 28 || x == 30){
-            return 0.774;
-        }else if (x == 29 || x == 35){
-            return 0.677;
-        }else if (x == 31){
-            return 0.709;
-        }else if (x == 32 || x == 33){
-            return 0.838;
-        }else if (x == 34){
-            return 0.74;
-        }else if (x == 36 || x == 38){
-            return 0.806;
-        }else if (x == 37){
-            return 0.87;
-        }else if (x == 39 || x == 41){
-            return 0.9;
-        }else if (x == 40 || x == 42 || x == 43){
-            return 0.967;
-        }
-    }
-    //If we are talking about the outside square
-    //I counted the number of larger squares in a given column to determine the fractional probability of having
-    //a green outside square for that row. (numberOfGreenSquares/total)
-    else{
-        if (x == 0 || x == 1){
-            return 0;
-        }else if (x == 2 || x == 3 || x == 6){
-            return 0.06;
-        }else if (x == 4 || x == 5 || x == 14){
-            return 0.09;
-        }else if (x == 7 || x == 8){
-            return 0.129;
-        }else if (x == 9){
-            return 0.16;
-        }else if (x == 10){
-            return 0.22;
-        }else if (x == 11 || x == 12){
-            return 0.32;
-        }else if (x == 13 || x == 16){
-            return 0.19;
-        }else if (x == 15){
-            return 0.258;
-        }else if (x == 17 || x == 19){
-            return 0.387;
-        }else if (x == 18){
-            return 0.48;
-        }else if (x == 20){
-            return 0.35;
-        }else if (x == 21 || x == 24 || x == 25){
-            return 0.45;
-        }else if (x == 22 || x == 26){
-            return 0.58;
-        }else if (x == 23){
-            return 0.419;
-        }else if (x == 27){
-            return 0.61;
-        }else if (x == 28 || x == 30 || x == 37){
-            return 0.709;
-        }else if (x == 29){
-            return 0.677;
-        }else if (x == 31){
-            return 0.645;
-        }else if (x == 32 || x == 35){
-            return 0.74;
-        }else if (x == 33 || x == 36){
-            return 0.774;
-        }else if (x == 34 || x == 38 || x == 39){
-            return 0.87;
-        }else if (x == 40){
-            return 0.935;
-        }else if (x == 41){
-            return 0.9;
-        }else if (x == 42){
-            return 0.967;
-        }else{
-            return 1;
-        }
-
-    }
-   
+//Return the probability of a square being green based on the column number and the randomly generated start
+//and end values using the map function.
+function getProb(x, start, end){
+    return map(x, 0, 43, start, end);
 }
 
 
@@ -194,3 +95,12 @@ function getColor(prob){
    }
      
 }
+
+
+//Record mouse clicks
+function mouseClicked(){
+    //Every time the mouse is clicked, redraw the entire composition. This will cause it to randomize the 
+    //distribution of green squares across the piece.
+    draw();
+}
+
