@@ -24,7 +24,7 @@ let circleColors = ["Salmon", "Pink", "MediumVioletRed", "LightPink", "HotPink",
 //Initialize the circle color
 let circColor = "Salmon";
 //Set the radius of the circle.
-let circRad = 34;
+let circRad = 26;
 
 //Create the x and y variables for the rounded square and set to arbitrary values within the canvas.
 let roundx = 420;
@@ -62,7 +62,6 @@ function draw() {
         temp = random(squareColors);
     }
     sqColor = temp;
-    
   }
   //If the square has hit the top wall or the bottom wall
   if(squarey == 0 || squarey+50 == 400){
