@@ -11,7 +11,7 @@ function setup() {
 function draw() {
   background("MediumSeaGreen");
 
-  image(img, 10, 10, 100, 100);
+  image(img, 10, 10, 80, 80);
    
 
 }
