@@ -86,10 +86,12 @@ function draw() {
   if (score == 0){
     //Cover up the previous score.
     fill("MediumSeaGreen");
+    noStroke();
     square(750, 0, 100); 
+    fill(0);
     text(score, 750, 50);
     fill("Maroon");
-    text("Game Over", 210, 400);
+    text("Game Over", 260, 400);
     noLoop();
   }
 
