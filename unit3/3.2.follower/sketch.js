@@ -19,8 +19,6 @@ let y = 50;
 function draw() {
   background("MediumSeaGreen");
 
-  image(img, x-25, y-25, 50, 50);
- 
   if (mouseX > x){
     xspeed = speedfactor;
   }else{
@@ -36,6 +34,8 @@ function draw() {
   x = x + xspeed;
   y = y + yspeed;
  
+  image(img, x-25, y-25, 50, 50);
+  
   let d = sqrt((x - mouseX)**2 + (y - mouseY)**2);  
 
   if(d <= 5){
