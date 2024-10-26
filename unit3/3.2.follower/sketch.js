@@ -37,7 +37,9 @@ function draw() {
   if (y-24 == 0 || y + 24 == height){
     yspeed = 0;
   }
- 
+
+  console.log(x)
+  console.log(y) 
   x = x + xspeed;
   y = y + yspeed;
 
