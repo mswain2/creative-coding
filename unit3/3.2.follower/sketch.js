@@ -18,6 +18,7 @@ let score = 5;
 
 function draw() {
   background("MediumSeaGreen");
+  textSize(100);
   
   text(score, 775, 25);
 
@@ -61,9 +62,10 @@ function draw() {
     score = score - 1; 
   }
 
-  if (score == 0){
+  if (score == 0){ 
+    text(score, 775, 55);
+    text("Game Over", 400, 400);
     noLoop();
-    score = "Game Over";
   }
 
 }
