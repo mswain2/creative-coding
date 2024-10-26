@@ -30,11 +30,11 @@ function draw() {
     yspeed = -speedfactor;
   }
 
-  if (x-25 == 0 || x + 25 == width){
+  if (x-24 == 0 || x + 24 == width){
     xspeed = 0;
   }
 
-  if (y-25 == 0 || y + 25 == height){
+  if (y-24 == 0 || y + 24 == height){
     yspeed = 0;
   }
  
