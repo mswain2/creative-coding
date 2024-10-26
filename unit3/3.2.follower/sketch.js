@@ -18,28 +18,30 @@ let y = 50;
 function draw() {
   background("MediumSeaGreen");
 
-  if (mouseX > x){
-    xspeed = speedfactor;
+  if (mouseX > x && x + 24 != width){
+    if(x + 24 != width){
+        xspeed = speedfactor;
+    }else{xspeed = 0;}
   }else{
-    xspeed = -speedfactor;
+    if (x - 24 != 0){
+        xspeed = -speedfactor;
+    }else{xspeed = 0;}
   }
 
   if (mouseY > y){
-    yspeed = speedfactor;
+    if (y + 24 != height){
+        yspeed = speedfactor;
+    }else{
+        yspeed = 0;
+    }
   }else{
-    yspeed = -speedfactor;
+    if (y - 24 != 0){
+        yspeed = -speedfactor;
+    }else{
+        yspeed = 0;
+    }
   }
 
-  if (x-24 == 0 || x + 24 == width){
-    xspeed = 0;
-  }
-
-  if (y-24 == 0 || y + 24 == height){
-    yspeed = 0;
-  }
-
-  console.log(x)
-  console.log(y) 
   x = x + xspeed;
   y = y + yspeed;
 
