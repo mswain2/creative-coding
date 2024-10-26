@@ -9,12 +9,11 @@ function setup() {
 }
 
 
-let speedfactor = 3;
+let speedfactor = 2;
 let xspeed = speedfactor;
 let yspeed = speedfactor;
 let x = 50;
 let y = 50;
-
 
 function draw() {
   background("MediumSeaGreen");
@@ -31,9 +30,18 @@ function draw() {
     yspeed = -speedfactor;
   }
 
+  if (x-25 == 0 || x + 25 == width){
+    xspeed = 0;
+  }
+
+  if (y-25 == 0 || y + 25 == height){
+    yspeed = 0;
+  }
+ 
   x = x + xspeed;
   y = y + yspeed;
- 
+
+
   image(img, x-25, y-25, 50, 50);
   
   let d = sqrt((x - mouseX)**2 + (y - mouseY)**2);  
