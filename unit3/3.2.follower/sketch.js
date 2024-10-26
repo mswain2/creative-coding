@@ -20,7 +20,7 @@ function draw() {
   background("MediumSeaGreen");
   textSize(50);
   
-  text(score, 775, 25);
+  text(score, 750, 50);
 
   if (mouseX > x){
     if(x + 24 != width){
@@ -64,7 +64,8 @@ function draw() {
 
   if (score == 0){ 
     text(score, 750, 50);
-    text("Game Over", 400, 400);
+    fill("Maroon");
+    text("Game Over", 250, 400);
     noLoop();
   }
 
