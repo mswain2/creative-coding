@@ -32,6 +32,9 @@ function draw() {
   }else{
     yspeed = -speedfactor;
   }
+
+  x = x + xspeed;
+  y = y + yspeed;
  
   let d = sqrt((x - mouseX)**2 + (y - mouseY)**2);  
 
