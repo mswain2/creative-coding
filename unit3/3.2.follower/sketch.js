@@ -83,7 +83,10 @@ function draw() {
   }
 
   //If the score is 0, update the score and then stop the game and print Game Over.
-  if (score == 0){ 
+  if (score == 0){
+    //Cover up the previous score.
+    fill("MediumSeaGreen");
+    square(750, 0, 100); 
     text(score, 750, 50);
     fill("Maroon");
     text("Game Over", 210, 400);
