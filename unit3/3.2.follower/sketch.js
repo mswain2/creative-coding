@@ -14,11 +14,14 @@ let xspeed = speedfactor;
 let yspeed = speedfactor;
 let x = 50;
 let y = 50;
+let score = 5;
 
 function draw() {
   background("MediumSeaGreen");
+  
+  text(score, 775, 25);
 
-  if (mouseX > x && x + 24 != width){
+  if (mouseX > x){
     if(x + 24 != width){
         xspeed = speedfactor;
     }else{xspeed = 0;}
@@ -54,7 +57,13 @@ function draw() {
     x = 50;
     y = 50;
     xspeed = speedfactor;
-    yspeed = speedfactor; 
+    yspeed = speedfactor;
+    score = score - 1; 
+  }
+
+  if (score == 0){
+    noLoop();
+    score = "Game Over";
   }
 
 }
