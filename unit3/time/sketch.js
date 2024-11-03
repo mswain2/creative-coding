@@ -76,7 +76,7 @@ function draw() {
   if(hour() >= 7 && hour() <= 12){
     y = map(hour(), 7, 12, 200, 500);
   //If the sun should be setting.
-  else if(hour() > 12 && hour() <= 18){
+  }else if(hour() > 12 && hour() <= 18){
     y = map(hour(), 13, 18, 500, 200);
   //If the moon should be rising.
   }else if(hour() > 18){
