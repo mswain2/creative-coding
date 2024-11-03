@@ -67,7 +67,7 @@ function draw() {
   text("second: " + second(), 50, 65);
   text("minute: " + minute(), 50, 80);
   text("hour: " + hour(), 50, 95);
-  text("day: " + day(), 50, 110);
+  //text("day: " + day(), 50, 110);
   text("month: " + month(), 50, 125);
   text("year: " + year(), 50, 140);
 
