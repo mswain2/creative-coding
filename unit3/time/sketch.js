@@ -4,7 +4,7 @@ function setup() {
 }
 
 function preload(){
-    day = loadImage('bunny.png');
+    d = loadImage('bunny.png');
     night = loadImage('sleepy.png');
 }
 
@@ -26,7 +26,7 @@ function draw() {
     groundcolor = "MediumSeaGreen";
     circlecolor = "Gold";
     cloudColor = "white";
-    img = day;
+    img = d;
     speed = 3;
  }else{
     color = "MidnightBlue";
