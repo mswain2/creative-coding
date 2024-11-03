@@ -21,7 +21,7 @@ let speed;
 
 function draw() {
 
-  if(hour() >= 7 && hour() <= 12){
+  if(hour() >= 7 && hour() <= 18){
     color = "LightSkyBlue";
     groundcolor = "MediumSeaGreen";
     circlecolor = "Gold";
@@ -64,12 +64,12 @@ function draw() {
   //Moon: 18-23 and 0-7. Grows 18-0:30. Shrinks 0:30 - 7
   //Can make some hours/minutes/seconds move tick by tick and make some move instantaneously.
 
-  text("second: " + second(), 50, 65);
-  text("minute: " + minute(), 50, 80);
-  text("hour: " + hour(), 50, 95);
+  //text("second: " + second(), 50, 65);
+  //text("minute: " + minute(), 50, 80);
+  //text("hour: " + hour(), 50, 95);
   //text("day: " + day(), 50, 110);
-  text("month: " + month(), 50, 125);
-  text("year: " + year(), 50, 140);
+  //text("month: " + month(), 50, 125);
+  //text("year: " + year(), 50, 140);
 
 }
 
