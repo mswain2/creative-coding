@@ -33,7 +33,7 @@ let diam;
 let cloudColor;
 let img;
 let prev = 0;
-let speed;
+let s;
 
 function draw() {
   //If it is during the day(calculated before daylight savings)
@@ -49,7 +49,7 @@ function draw() {
     //Set the image to the bunny
     img = d;
     //Set speed to three to make the bunny move every three seconds rather than every second. Implies day goes by slow.
-    speed = 3;
+    s = 3;
  //If it is night time
  }else{
     //Set sky color to dark blue
@@ -63,7 +63,7 @@ function draw() {
     //Set the image to the deer
     img = night;
     //Set speed to one to make the deer move every second. Implies night goes by quickly.
-    speed = 1;
+    s = 1;
   }
 
   //Set background color to sky color
@@ -85,7 +85,8 @@ function draw() {
   }else{
     y = map(hour(), 0, 7, 500, 200);
   }
- 
+
+  console.log(y); 
   //Draw the sun/moon
   circle(400, y, 200);
 
@@ -98,7 +99,7 @@ function draw() {
   cloud(map(minute(), 0, 59, 0, 800), 125, cloudColor);
   
   //If the second() is a time when the image should move, move the image. 
-  if(second() % speed == 0){
+  if(second() % s == 0){
     prev = map(second(), 0, 59, 25, 803);
   }
   //Draw the image;
