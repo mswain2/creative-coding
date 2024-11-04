@@ -74,19 +74,18 @@ function draw() {
   //Set the y variable based on the mapping of the y variable.
   //If the sun should be rising.
   if(hour() >= 7 && hour() <= 12){
-    y = map(hour(), 7, 12, 200, 500);
+    y = map(hour(), 7, 12, 500, 200);
   //If the sun should be setting.
   }else if(hour() > 12 && hour() <= 18){
-    y = map(hour(), 13, 18, 500, 200);
+    y = map(hour(), 13, 18, 200, 500);
   //If the moon should be rising.
   }else if(hour() > 18){
-    y = map(hour(), 18, 23, 200, 500);
+    y = map(hour(), 18, 23, 500, 200);
   //If the moon should be setting.
   }else{
-    y = map(hour(), 0, 7, 500, 200);
+    y = map(hour(), 0, 7, 200, 500);
   }
 
-  console.log(y); 
   //Draw the sun/moon
   circle(400, y, 200);
 
