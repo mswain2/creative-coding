@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--
+
+Through the Park
+Copyright (c) 2008, 2019 Nick Montfort <nickm@nickm.com>
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved. This file is offered as-is,
+without any warranty.
+
+Indiscretion
+Mackenzie Swain. Reimplementation of Through the Park by Nick Montfort https://nickm.com/poems/through_the_park.html
+
+I wanted to make a story that was like Through the Park where it could have a bad ending or a good ending.
+I chose to write a story about a couple who hosted a party and there are two separate endings where the 
+party went well and one where the wife murders the husband. I really like how this turned out and I enjoy
+the different stories that come out of it given the randomness.
+
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+/* <![CDATA[ */
+body {
+ /* Changed the background color to pink */
+ background: #DB7093;
+ color: #F8F8FF;
+ margin: 24pt 24pt 0 24pt;
+ font-family: "Playwrite GB S";
+ font-size: 18pt;
+}
+div {
+ height: 16pt;
+}
+a {
+ color: #117;
+ text-decoration: none;
+}
+/* ]]> */
+</style>
+<script>
+//I made an entirely different story for the program to use.
+var sentences=[
+"Music begins playing",
+"Tables are set on one side of the room",
+"A space for dancing is available",
+"Guests start to filter in",
+"The man greets a pretty lady",
+"A woman eyes them",
+"The woman eyes the ring on her left hand",
+"The man grabs the lady a drink",
+"The party is in full swing",
+"Guests are dancing and drinking",
+"The man and woman dance",
+"The man and the lady dance",
+"It starts to get late",
+"The music fades",
+"The woman waves her guests goodbye",
+"Only the man and the woman are left",
+"The man and woman start arguing",
+"Drinks are spilled",
+"Things are thrown across the room",
+"The man and woman make up",
+"The woman grabs a table centerpiece",
+"A red liquid covers the floor",
+"The woman begins cleaning",
+"Only the woman is left",
+"The party is over"
+];
+var to_drop = 2 * sentences.length / 3;
+var n = 0;
+var text = ""
+function rand_range(max) {
+ return Math.floor(Math.random()*(max+1));
+}
+function drop(array) {
+ var to_remove = rand_range(array.length-1);
+ while (array[to_remove].length == 0) {
+  to_remove = rand_range(array.length-1);
+ }
+ array[to_remove] = '';
+ return array;
+}
+function story() {
+ var main=document.getElementById('main');
+ for (n=0; n<to_drop; n++) {
+  sentences = drop(sentences);
+ }
+ for (n=0; n<sentences.length; n++) {
+  if (sentences[n].length > 0) {
+   text += sentences[n] + ". ... "
+   }
+  }
+ last=document.createElement('div');
+ last.appendChild(document.createTextNode(text));
+ main.appendChild(last);
+}
+</script>
+  <title>Indiscretion</title>
+</head>
+<body onload="story();">
+<div style="float:right; color:#C71585; width:250px; font-style:italic">
+<p style="font-size: 13pt;">Text &amp; Code: Kenzie Swain</p>
+<p style="font-size: 13pt;">This page, using a very simple bit of JavaScript, generates different stories by omitting different sentences from a prepared list at random each time. <a href="indiscretion.html">Reload</a> for a different story.</p>
+</div>
+<div style="height:60pt; font-size:30pt"><u>Indiscretion</u></div>
+<div id="main" style="font-weight:bold; width:50%"></div>
+</body>
+</html>

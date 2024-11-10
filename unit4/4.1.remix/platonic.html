@@ -1,0 +1,201 @@
+<html lang="en">
+<head>
+	<meta charset=utf-8>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--
+	Love Letters reimplementation
+	copyright (c) 2014, 2024 Nick Montfort <nickm@nickm.com>
+	based on a 1953 program by Christopher Strachey
+
+	Copying and distribution of this file, with or without modification,
+	are permitted in any medium without royalty provided the copyright
+	notice and this notice are preserved. This file is offered as-is,
+	without any warranty.
+
+    Love Letters (Platonic) 
+    Kenzie Swain
+    based on Nick Montfort's Love Letters reimplementation
+    This is my reimplementation of Love Letters by Nick Montfort.
+    I wanted to change these letters by making them love letters between friends. I really wanted to 
+    showcase platonic love and how beautiful that can be as well. I really like how this turned out and I think
+    it really represents the beauty of platonic love and the joy of friendship.
+    Here is the link to the work I reimplemented: https://nickm.com/memslam/love_letters.html
+    
+	-->
+	<style>
+		body {
+			margin: 0;
+			font-family: monospace;
+			font-size: clamp(1rem, 1vw, 1.5rem);
+			overflow:hidden;
+		}
+		header {
+			background: #ddd;
+			margin: 0;
+			border-bottom: #eee solid .2rem;
+			width: 100%;
+			height: 5.2rem;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+		}
+		header > h1 {
+			padding: .3rem .8rem .2rem .8rem;
+			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', 
+				serif;
+			font-size: .85rem;
+			font-weight: normal;
+			white-space: nowrap;
+		}
+		a {
+			text-decoration: none;
+			color: #b00;
+		}
+		#main {
+			padding: 8rem 6vw 3vh 6vw;
+		}
+	</style>
+	<script>
+		var t = 0, caps = false, pause = false;
+
+		const hugeSpace = '<br><br>          ',
+						  // All non-breaking spaces
+        //I changed all of the following arrays to contain words with more platonic connotations.
+        //I wanted to maintain the level of appreciation and love in the letters, but I wanted it to come
+        //from a friend rather than a lover.
+ 		first = ['Dearest', 'Dear', 'Hello', 'Greetings'],
+		second = ['friend', 'buddy', 'bestie', 'companion', 'comrade'],
+        adjectives = ['adorable', 'generous', 'helpful', 'funny', 'goofy', 'caring',
+            'kind', 'polite', 'harmonious', 'enthusiastic', 'friendly', 'curious',
+            'sweet', 'smart', 'fantastic', 'lucky', 'true', 'awesome', 'admirable',
+            'strong', 'patient', 'giddy', 'whimsical', 'lively', 'thankful',
+            'eager', 'energetic', 'pleasant', 'terrific', 'hilarious', 'precious',
+            'amusing', 'delightful', 'spectacular', 'aspiring', 'silly', 'magnificent'],
+		nouns = ['adoration', 'affection', 'ambition', 'amusement', 'happiness',
+            'devotion', 'excitement', 'fondness', 'joy', 'connection', 'determination',
+            'hilarity', 'humility', 'sensibility', 'hopefulness', 'artfulness',
+            'allegiance', 'inspiration', 'liking', 'love', 'curiosity', 'congeniality',
+            'excitement', 'loyalty', 'respect', 'support', 'cooperation', 'commitment'],
+        adverbs = ['wholly', 'gladly', 'equally', 'lively', 'merrily', 'gratefully',
+            'healthily', 'nicely', 'delightfully', 'meaningfully', 'deeply', 'faithfully',
+            'lovingly', 'cheerfully', 'selflessly', 'confidently', 'wonderfully',
+            'honestly', 'fondly', 'affectionately', 'brightly', 'dearly', 'rightfully',
+            'wisely', 'thoughtfully', 'naturally', 'intently', 'warmly'],
+        verbs = ['adores', 'cares for', 'cherishes', 'holds dear', 'likes', 'loves',
+            'supports', 'enjoys', 'appreciates', 'entertains', 'encourages', 'excites',
+            'lives for', 'interests', 'challenges', 'admires', 'welcomes', 'blesses',
+            'calls for', 'reflects', 'amuses', 'compliments', 'relies on', 'satisfies',
+            'trusts', 'completes', 'excites', 'follows', 'strengthens', 'applauds',
+            'preserves', 'depends on'];
+       
+		function fullscreenListeners(f)
+		{
+			f("mozfullscreenchange", fullscreenEvt);
+			f("MSFullscreenChange", fullscreenEvt);
+			f("fullscreenchange", fullscreenEvt);
+			f("webkitfullscreenchange", fullscreenEvt);
+		}
+
+		function fullscreenEvt(incomingReq)
+		{
+			fullscreenListeners(document.removeEventListener);
+			if(incomingReq === true || document.mozFullScreen || 
+			document.fullscreenElement || document.webkitIsFullScreen || 
+			document.msFullscreenElement) {
+				var fsElt;
+				if(window.c instanceof HTMLCanvasElement) fsElt = window.c;
+				else fsElt = document.documentElement;
+				if (fsElt.requestFullscreen) fsElt.requestFullscreen();
+				else if (fsElt.msRequestFullscreen) fsElt.msRequestFullscreen();
+				else if (fsElt.mozRequestFullScreen)
+					fsElt.mozRequestFullScreen();
+				else if (fsElt.webkitRequestFullScreen) 
+					fsElt.webkitRequestFullScreen();
+				nav.style.display = "none";
+				main.style.paddingTop = "0";
+			}
+			else nav.style.display = "block";
+			main.style.paddingTop = "8rem";
+			if (typeof l === "function") setTimeout(l, 200);
+			fullscreenListeners(document.addEventListener);
+		}
+
+		function pick(array) {
+			var i = Math.floor(Math.random() * (array.length));
+			return array[i];
+		}
+
+		function maybe(words) {
+			var text = (Math.random() > 0.5) ? ' ' + pick(words) : '';
+			return text;
+		}
+
+		function longer() {
+			return ' My' + maybe(adjectives) + ' ' + pick(nouns) + 
+			maybe(adverbs) + ' ' + pick(verbs) + ' your' + 
+			maybe(adjectives) + ' ' + pick(nouns) + '.';
+		}
+
+		function shorter() { 
+			return ' ' + pick(adjectives) + ' ' + pick(nouns) + '.'; 
+		}
+
+		function letter() {
+			var i, type, you_are = false, text = '';
+			text = text + pick(first) + ' ' + pick(second) + '<br><br>';
+			for (i = 0; i < 10; i = i + 1) {
+				type = pick(['longer', 'shorter']);
+				if (type === 'longer') {
+					text = text + longer();
+					you_are = false;
+				} else {
+					if (you_are) {
+						text = text.slice(0, -1) + ': My' + shorter();
+						you_are = false;
+					} else {
+						text = text + ' You are my' + shorter();
+						you_are = true;
+					}
+				}
+			}
+			text = text + hugeSpace + 'Yours ' + pick(adverbs) + 
+					hugeSpace + '     ' + 'K.R.S.';
+			return text;
+		}
+
+		function nextText() {
+			var last, main = document.getElementById('main');
+			if (pause) setTimeout(nextText, 300);
+			else {
+				if (25 > t) t += 1;
+				else main.removeChild(main.firstChild);
+				last = document.createElement('p');
+				last.innerHTML = caps ? letter().toUpperCase() : letter();
+				main.appendChild(last);
+				main.lastChild.scrollIntoView({block:"end", behavior:"smooth"});
+				setTimeout(nextText, 12000);
+			}
+		}
+	</script>
+	<title>Strachey’s Love Letters (Reimplementation)</title>
+</head>
+<body onload=nextText()>
+	<header id=nav>
+		<h1>
+			<span style="float: right; font-size: 150%; clear:both"><a id=pb 
+				onclick="pause=!pause;pb.style.color=pause?'black':'red'">⏸</a>
+				<a id=cl 
+				onclick="caps=!caps;cl.style.color=caps?'black':'red'">⇪</a> 
+				<a onclick=fullscreenEvt(true)>⛶</a>
+				</span>
+			Love Letters (Platonic) (2024)<br>
+			based on a work by  
+		<a href="nickm@nickm.com">Nick Montfort</a><br>
+			code by Kenzie Swain
+			Batch-Era Text Generators
+		</h1>
+	</header>
+	<div id=main></div>
+</body>
+</html>
