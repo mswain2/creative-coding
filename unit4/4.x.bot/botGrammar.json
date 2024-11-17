@@ -1,0 +1,8 @@
+{
+	"origin": "It is #adverb# #adjective# to #verb# a #animal# with a #noun#",
+	"adverb": ["utterly", "nearly", "scarily", "successfully", "selfishly", "unexpectedly", "always", "perfectly", "usually", "offensively"],
+	"adjective": ["optimistic", "hasty", "suspicious", "festive", "careless", "goofy", "vital", "brilliant", "notable", "taboo"],
+	"verb": ["identify", "join", "spray", "ignore", "crush", "paint", "arrest", "attack", "excite", "scratch"],
+	"animal": ["lion", "lobster", "crocodile", "reindeer", "raccoon", "grizzly bear", "bison", "marmoset", "hamster", "goose"],
+	"noun": ["stick", "pen", "watch", "guava", "box", "book", "sweater", "keyboard", "table", "flamethrower"]
+}
