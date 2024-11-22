@@ -7,8 +7,13 @@
     <!-- include the Tracery library -->
     <script src="https://cdn.jsdelivr.net/npm/tracery-grammar@2.7.4/tracery.min.js"></script>
 
-    <!-- include the Bindery library -->
-    <script src="https://unpkg.com/bindery@2.3.0/dist/bindery.min.js"></script>
+    <!-- Paged.js library -->
+    <script defer src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+    <script>
+        window.PagedConfig = {auto: false};
+    </script>
+
+    <link href="https://mswain2.github.io/creative-coding/unit4/book/interface.css" rel="stylesheet" type="text/css" />
 
     <!-- RiTa library -->
     <script src="https://unpkg.com/rita@2.8.31/dist/rita.js"></script>
@@ -19,15 +24,18 @@
         Use this page to complete the "Book" project:
         https://canvas.umw.edu/courses/1498218/assignments/11723294
     -->  
-
+    
+    <!-- Add code to put the page number in the center at the bottom of the page -->
     <style type="text/css">
-      
+        @page {
+            @bottom-center {
+                content: "page " counter(page);
+            }
+        } 
     </style>
 
 </head>
 <body>
-    <main>
-    </main>
     <script src="sketch.js"></script>
 </body>
 </html> 
